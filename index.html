@@ -11,7 +11,7 @@
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -20,29 +20,33 @@
         header {
             background-color: #0056b3;
             color: white;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
         }
 
         nav {
+            display: flex;
+            flex-direction: column; /* Cambiado a columna */
             background-color: #333;
+            padding: 10px;
         }
 
         .nav-list {
             list-style: none;
+            display: flex;
+            flex-direction: column; /* Cambiado a columna */
+            margin: 0;
             padding: 0;
         }
 
         .nav-list li {
-            margin: 5px 0;
+            margin: 5px 0; /* Ajuste de margen */
         }
 
         .nav-list a {
             color: white;
             text-decoration: none;
-            padding: 10px;
-            display: block;
-            text-align: center;
+            padding: 8px 16px;
             transition: background-color 0.3s;
         }
 
@@ -55,33 +59,32 @@
             overflow: hidden;
             color: white;
             text-align: center;
-            height: 150px;
+            height: 200px; /* Ajustado para móviles */
         }
 
         #banner img {
             width: 100%;
-            height: auto;
-        }
-
-        #banner h1, #banner p {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        #banner h1 {
-            top: 20%;
-            font-size: 1.5em;
+            height: auto; /* Cambiado para mantener la proporción */
         }
 
         #banner p {
-            top: 40%;
-            font-size: 1em;
+            position: absolute;
+            top: 60%; /* Ajustado para que sea más visible en móviles */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em; /* Ajuste de tamaño de fuente */
+        }
+
+        .hero-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
         }
 
         .carousel-container {
             position: relative;
-            margin: 10px auto;
+            max-width: 100%; /* Ajustado a 100% */
+            margin: 20px auto;
             overflow: hidden;
         }
 
@@ -92,42 +95,57 @@
 
         .carousel-item {
             min-width: 100%;
+            box-sizing: border-box;
         }
 
         .carousel img {
             width: 100%;
-            height: auto;
+            height: auto; /* Mantiene la proporción de las imágenes */
         }
 
         .carousel-button {
             position: absolute;
             top: 50%;
+            transform: translateY(-50%);
             background-color: rgba(255, 255, 255, 0.7);
             border: none;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 20px; /* Ajustado para móviles */
             padding: 10px;
         }
 
-        .prev { left: 10px; }
-        .next { right: 10px; }
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
 
         .grid-container {
-            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste automático */
+            gap: 20px;
+            padding: 20px;
         }
 
         .image-card {
-            margin: 10px 0;
-            background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 5px;
             overflow: hidden;
             text-align: center;
+            background-color: #fff;
+            position: relative;
         }
 
         .image-card img {
             width: 100%;
-            height: auto;
+            height: auto; /* Mantiene la proporción */
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1);
         }
 
         .image-title {
@@ -135,25 +153,84 @@
             font-weight: bold;
         }
 
+        .testimonial-container,
+        .event-container,
+        .faq-container {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #e9ecef;
+        }
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
         }
 
         footer a {
             color: white;
-            margin: 0 5px;
+            margin: 0 10px;
             text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .popup {
+            display: none; 
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .promo-button {
+            position: fixed;
+            right: 20px;
+            top: 100px;
+            background-color: gray;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .promo-button:hover {
+            background-color: darkgray;
         }
 
         .social-icons {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            bottom: 20px;
+            right: 20px;
             display: flex;
             flex-direction: column;
+            gap: 10px; 
         }
 
         .social-icons a {
@@ -162,31 +239,50 @@
             padding: 10px;
             border-radius: 50%;
             text-align: center;
-            margin: 5px 0;
             transition: background-color 0.3s;
+            width: 40px; 
+            height: 40px; 
+            line-height: 40px; 
         }
 
         .social-icons a:hover {
             background-color: #575757;
         }
 
+        @media (max-width: 768px) {
+            #banner {
+                height: 150px; /* Ajustado para móviles */
+            }
+
+            .nav-list {
+                align-items: center; /* Centrar elementos */
+            }
+
+            .carousel-button {
+                font-size: 18px; /* Ajuste de tamaño de botón */
+            }
+        }
+
         @media (max-width: 480px) {
-            #banner h1 {
-                font-size: 1.2em;
-            }
             #banner p {
-                font-size: 0.8em;
+                font-size: 1em; /* Más pequeño para móviles */
             }
+
             .image-title {
-                font-size: 0.9em;
+                font-size: 0.9em; /* Más pequeño para títulos */
             }
         }
     </style>
 </head>
 <body>
 
+    <div class="popup" id="popup">
+        <button class="close-btn" onclick="closePopup()">Cerrar</button>
+        <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Popup Image">
+    </div>
+
     <div id="banner">
-        <img src="https://i.postimg.cc/SN36LcBn/banner.jpg" alt="Banner">
+        <img src="https://i.postimg.cc/SN36LcBn/banner.jpg" alt="Banner" id="banner-img">
         <h1>Bienvenidos a nuestro Instituto</h1>
         <p>Educación de calidad para todos</p>
     </div>
@@ -204,9 +300,11 @@
         </ul>
     </nav>
 
+    <a href="promocion2024.html" class="promo-button">Promo 2024</a>
+
     <div class="carousel-container">
         <div class="carousel">
-            <div class="carousel-item">
+            <div class="carousel-item active">
                 <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Imagen 1">
             </div>
             <div class="carousel-item">
@@ -227,14 +325,59 @@
             <p>Disfruta de un aprendizaje dinámico y participativo en nuestras aulas.</p>
         </div>
         <div class="image-card">
-            <img src="https://i.postimg.cc/L5hPLsvk/fotocolegio1.jpg" alt="Nuestro Instituto">
+            <img src="https://i.postimg.cc/L5hPLsvk/fotocolegio1.jpg" alt="Eventos Culturales">
             <div class="image-title">Nuestro Instituto</div>
             <p>Participa en actividades que enriquecen nuestra comunidad estudiantil.</p>
         </div>
         <div class="image-card">
-            <img src="https://d26m4ikkajfmz.cloudfront.net/wp-content/uploads/2023/02/Clases-en-Puerto-Cortes-e1675354458190.jpg" alt="Gimnasio">
+            <img src="https://d26m4ikkajfmz.cloudfront.net/wp-content/uploads/2023/02/Clases-en-Puerto-Cortes-e1675354458190.jpg" alt="Talleres Especializados">
             <div class="image-title">Gimnasio</div>
             <p>Desarrolla tus habilidades en talleres impartidos por expertos.</p>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h2>INSTITUTO FRANKLIN DELANO ROOSEVELT</h2>
+        <div class="news-ticker">
+            <span>¡INSCRIPCIONES ABIERTAS EN EL INSTITUTO FRANKLIN DELANO ROOSEVELT!</span>
+        </div>
+        <img src="https://i.postimg.cc/htVd968Y/toma1.jpg" alt="Inscripciones abiertas" />
+        
+        <div class="video-container">
+            <video controls>
+                <source src="C:\Users\JOSE REYES\Documents\Proyecto Final\videopromocional\Video anuncion fdr.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </div>
+    
+    <div class="testimonial-container">
+        <h2>Testimonios</h2>
+        <blockquote>
+            "La mejor educación que he recibido, con profesores dedicados y un ambiente maravilloso."
+        </blockquote>
+        <p>- Juan Pérez, exalumno</p>
+    </div>
+
+    <div class="event-container">
+        <h2>Eventos Próximos</h2>
+        <div class="event">
+            <strong>Baile de la solidaridad:</strong> 12 de octubre, Se realizó el baile de la solidaridad.
+        </div>
+        <div class="event">
+            <strong>Feria de Robotica:</strong> 20 de diciembre, una celebración musical para toda la familia.
+        </div>
+    </div>
+    
+    <div class="faq-container">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <strong>¿Cuál es el horario?</strong>
+            <p>Nuestras clases inician a las 7:00 a.m. y terminan a las 12:00 p.m. de lunes a viernes.</p>
+        </div>
+        <div class="faq-item">
+            <strong>¿Cómo puedo inscribirme?</strong>
+            <p>Las inscripciones se realizan a través de nuestro sitio web o directamente en la institución.</p>
         </div>
     </div>
 
@@ -263,6 +406,14 @@
 
             const carousel = document.querySelector('.carousel');
             carousel.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+        }
+
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
         }
     </script>
 </body>
