@@ -10,15 +10,13 @@ body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(135deg, #f0f0f0, #ffffff);
     color: #333;
-    padding: 0; /* Eliminé padding para móviles */
-    background-image: url('tu-imagen.jpg');
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra la imagen */
+    padding: 20px;
+    background-image: url('tu-imagen.jpg'); |
 }
 
 /* Títulos */
 h1 {
-    font-size: 2rem; /* Ajuste para dispositivos móviles */
+    font-size: 2.5rem; /* Mayor tamaño */
     text-align: center;
     margin-top: 20px;
     border-bottom: 2px solid #ccc;
@@ -27,7 +25,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem; /* Ajuste para dispositivos móviles */
+    font-size: 2rem; /* Mayor tamaño */
     margin-top: 15px;
     border-bottom: 1px solid #ccc;
     color: #555;
@@ -36,14 +34,14 @@ h2 {
 /* Párrafos */
 p {
     text-align: justify; /* Justificar texto */
-    margin: 10px; /* Menor margen para móviles */
-    line-height: 1.5; /* Espaciado entre líneas */
+    margin: 20px;
+    line-height: 1.6; /* Espaciado entre líneas */
 }
 
 /* Listas */
 ul {
     list-style-type: square;
-    margin: 10px 0;
+    margin: 20px 0;
     padding-left: 20px;
 }
 
@@ -79,18 +77,18 @@ a:hover {
     margin: 0;
     padding: 10px 0;
     display: flex;
-    flex-direction: column; /* Cambiado a columna para móviles */
+    justify-content: space-around;
     align-items: center;
 }
 
 .nav-list li {
-    padding: 10px;
+    position: relative;
 }
 
 .nav-list li a {
     color: #f9a03f;
     text-decoration: none;
-    padding: 10px; /* Ajustado para móviles */
+    padding: 15px 20px;
     font-weight: bold;
     transition: color 0.3s ease, transform 0.2s;
 }
@@ -100,23 +98,40 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Efecto de subrayado */
+.nav-list li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #f9a03f;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
 /* Secciones */
 section {
-    padding: 20px; /* Ajustado para móviles */
+    padding: 50px 20px;
     margin-top: 50px;
     border-bottom: 1px solid #e0e0e0;
     background: rgba(255, 255, 255, 0.9); /* Fondo de sección con opacidad */
     border-radius: 8px; /* Esquinas redondeadas */
 }
 
-/* Icono flotante */
+/* Estilo para el ícono flotante de Gmail */
 .icono-flotante {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    width: 40px; /* Ajustado para móviles */
-    height: 40px; /* Ajustado para móviles */
+    width: 50px;
+    height: 50px;
     transition: transform 0.3s ease;
 }
 
@@ -131,7 +146,7 @@ section {
 
 /* Formularios */
 form {
-    max-width: 100%; /* Ajustado para móviles */
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -155,7 +170,7 @@ input:focus, textarea:focus {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
@@ -171,7 +186,7 @@ input:focus, textarea:focus {
 /* Video */
 #video {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 video {
@@ -184,17 +199,20 @@ video {
 /* Estilos generales para dispositivos móviles */
 @media (max-width: 768px) {
     body {
-        padding: 0; /* Sin padding para llenar la pantalla */
+        padding: 10px;
     }
 
     .nav-list {
         flex-direction: column;
         align-items: center;
-        padding: 0; /* Sin padding adicional */
+    }
+
+    .nav-list li {
+        padding: 10px;
     }
 
     section {
-        padding: 20px; /* Menor espacio en móviles */
+        padding: 30px 15px; /* Menor espacio en móviles */
     }
 
     .icono-flotante {
@@ -205,19 +223,12 @@ video {
     }
 
     form {
+        width: 100%;
         padding: 10px;
     }
 
     input, textarea {
         font-size: 1rem;
-    }
-
-    h1, h2 {
-        font-size: 1.5rem; /* Ajuste adicional para títulos */
-    }
-
-    p {
-        margin: 5px; /* Margen reducido para móviles */
     }
 }
 
@@ -247,7 +258,7 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0; /* Ajustado para móviles */
+    padding: 30px 0;
     position: relative;
 }
 
@@ -321,11 +332,22 @@ footer a:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Sombras globales */
+* {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* Iconos */
 .icon {
     width: 24px;
     height: 24px;
     margin-right: 8px;
+}
+
+/* Efectos de hover avanzados */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos de tema claro y oscuro */
@@ -450,3 +472,4 @@ body[data-theme='dark'] a {
 #backToTop:hover {
     background-color: #0056b3;
 }
+    
