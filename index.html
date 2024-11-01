@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title>Instituto Franklin Delano Roosevelt</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,6 +29,7 @@
             justify-content: space-between;
             background-color: #333;
             padding: 10px;
+            flex-wrap: wrap; /* Allow items to wrap */
         }
 
         .nav-list {
@@ -38,6 +37,7 @@
             display: flex;
             margin: 0;
             padding: 0;
+            flex-wrap: wrap; /* Allow items to wrap */
         }
 
         .nav-list li {
@@ -203,7 +203,6 @@
             text-decoration: underline;
         }
 
-        
         .popup {
             display: none; 
             position: fixed;
@@ -233,7 +232,6 @@
             cursor: pointer;
         }
 
-       
         .promo-button {
             position: fixed;
             right: 20px;
@@ -251,7 +249,6 @@
             background-color: darkgray;
         }
 
-        
         .social-icons {
             position: fixed;
             bottom: 20px;
@@ -277,14 +274,14 @@
             background-color: #575757;
         }
 
-       
         @media (max-width: 768px) {
             .grid-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* One column layout on smaller screens */
             }
 
             nav {
                 flex-direction: column;
+                align-items: center; /* Center items in the navigation */
             }
 
             .nav-list {
@@ -294,6 +291,10 @@
 
             .nav-list li {
                 margin: 0.5rem 0;
+            }
+
+            .carousel-button {
+                font-size: 20px; /* Adjust button size */
             }
         }
     </style>
@@ -326,10 +327,6 @@
 
     <a href="promocion2024.html" class="promo-button">Promo 2024</a>
 
-   
-    
-
-    
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-item active">
@@ -345,7 +342,7 @@
         <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
-     
+
     <div class="grid-container">
         <div class="image-card">
             <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Clases Interactivas">
@@ -363,24 +360,7 @@
             <p>Desarrolla tus habilidades en talleres impartidos por expertos.</p>
         </div>
     </div>
-    <style>
-        .hero-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center; 
-        }
-    
-        .video-container {
-            width: 480px; 
-            margin-top: 20px;
-        }
-    
-        video {
-            width: 100%; 
-        }
-    </style>
-    
+
     <div class="hero-section">
         <h2>INSTITUTO FRANKLIN DELANO ROOSEVELT</h2>
         <div class="news-ticker">
@@ -391,12 +371,11 @@
         <div class="video-container">
             <video controls>
                 <source src="C:\Users\JOSE REYES\Documents\Proyecto Final\videopromocional\Video anuncion fdr.mp4" type="video/mp4">
-                
-                
                 Tu navegador no soporta el elemento de video.
             </video>
         </div>
     </div>
+    
     <div class="testimonial-container">
         <h2>Testimonios</h2>
         <blockquote>
@@ -409,15 +388,12 @@
         <h2>Eventos Próximos</h2>
         <div class="event">
             <strong>Baile de la solidaridad:</strong> 12 de octubre, Se realizó el baile de la solidaridad.
-            
         </div>
         <div class="event">
             <strong>Feria de Robotica:</strong> 20 de diciembre, una celebración musical para toda la familia.
-            
         </div>
     </div>
     
-
     <div class="faq-container">
         <h2>Preguntas Frecuentes</h2>
         <div class="faq-item">
@@ -457,12 +433,10 @@
             carousel.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
         }
 
-       
         window.onload = function() {
             document.getElementById('popup').style.display = 'flex';
         }
 
-      
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
         }
