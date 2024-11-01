@@ -11,7 +11,7 @@ body {
     background: linear-gradient(135deg, #f0f0f0, #ffffff);
     color: #333;
     padding: 20px;
-    background-image: url('tu-imagen.jpg'); |
+    background-image: url('tu-imagen.jpg');
 }
 
 /* Títulos */
@@ -229,6 +229,14 @@ video {
 
     input, textarea {
         font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem; /* Ajustar tamaño de título */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Ajustar tamaño de subtítulo */
     }
 }
 
@@ -472,4 +480,3 @@ body[data-theme='dark'] a {
 #backToTop:hover {
     background-color: #0056b3;
 }
-    
