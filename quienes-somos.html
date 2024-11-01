@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+        }
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-list li {
+            margin: 0 1rem;
+        }
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .nav-list li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+            background-color: white;
+            margin: 2rem 0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .testimonios {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .btn-info {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-info:hover {
+            background-color: #45a049;
+        }
+        #info-extra {
+            display: none;
+            margin-top: 1rem;
+            color: #666;
+        }
+        .form-container {
+            margin: 2rem 0;
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <a href="mailto:jonathanreyes0108@gmail.com" class="icono-flotante" target="_blank">
+        <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\gmail.png" alt="Gmail" title="Enviar un correo">
+    </a>
+
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="oferta-academica.html"><i class="fas fa-graduation-cap"></i> Oferta Académica</a></li>
+                <li><a href="historia.html"><i class="fas fa-book"></i> Historia</a></li>
+                <li><a href="info-general.html"><i class="fas fa-info-circle"></i> Información General</a></li>
+                <li><a href="promocion2024.html"><i class="fas fa-star"></i> Promoción 2024</a></li>
+                <li><a href="logros.html"><i class="fas fa-trophy"></i> Logros</a></li>
+                <li><a href="quienes-somos.html"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Quiénes Somos</h1>
+        <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Descripción de la imagen" style="max-width:50%; height:auto;">
+        <p>El Instituto Franklin Delano Roosevelt, ubicado en Puerto Cortés, Honduras, es una institución educativa comprometida con la formación integral de sus estudiantes. Fundado con la misión de fomentar el aprendizaje y el desarrollo personal, nuestro instituto ofrece una educación de alta calidad, centrada en valores como la responsabilidad, la solidaridad y el respeto. Nos destacamos por un enfoque innovador en la enseñanza, promoviendo habilidades críticas y creativas en un ambiente inclusivo. Con un equipo docente altamente calificado y programas académicos variados, aspiramos a preparar a nuestros estudiantes para enfrentar los desafíos del futuro y contribuir positivamente a la sociedad.</p>
+        
+        <button class="btn-info" onclick="toggleInfo()">Más Información</button>
+        <div id="info-extra">
+            <p>Nuestra visión es ser un referente en la educación integral, formando líderes comprometidos con el desarrollo sostenible y la paz. Contamos con una amplia gama de actividades extracurriculares que complementan la formación académica, incluyendo deportes, arte y servicio comunitario.</p>
+        </div>
+        
+    <div class="testimonios">
+        <h2>Testimonios</h2>
+        <p>"El Instituto Franklin Delano Roosevelt ha sido fundamental en mi desarrollo personal y académico. Los profesores son muy comprometidos y siempre están dispuestos a ayudar." - <strong>Estudiante Actual</strong></p>
+        <p>"La educación que recibí aquí me preparó para la universidad y la vida. Estoy muy agradecida por todo lo que aprendí." - <strong>Alumna Egresada</strong></p>
+    </div>
+
+    <div class="form-container">
+        <h2>Contacto</h2>
+        <form action="mailto:jonathanreyes0108@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Tu Nombre" required>
+            <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+            <textarea name="mensaje" rows="4" placeholder="Tu Mensaje" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Instituto Franklin Delano Roosevelt. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleInfo() {
+            const infoExtra = document.getElementById('info-extra');
+            if (infoExtra.style.display === "none" || infoExtra.style.display === "") {
+                infoExtra.style.display = "block";
+            } else {
+                infoExtra.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

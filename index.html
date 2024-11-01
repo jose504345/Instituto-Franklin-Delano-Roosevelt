@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Franklin Delano Roosevelt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Instituto Franklin Delano Roosevelt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-list li {
+            margin-right: 20px;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-list a:hover {
+            background-color: #575757;
+        }
+
+        #banner {
+            position: relative;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            height: 300px;
+        }
+
+        #banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #banner p {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+        }
+
+        .hero-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-title {
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .testimonial-container {
+            background-color: #e9ecef;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .testimonial-container blockquote {
+            font-style: italic;
+            margin: 0;
+        }
+
+        .event-container {
+            padding: 20px;
+        }
+
+        .event {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .faq-container {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .popup {
+            display: none; 
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+       
+        .promo-button {
+            position: fixed;
+            right: 20px;
+            top: 100px;
+            background-color: gray;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .promo-button:hover {
+            background-color: darkgray;
+        }
+
+        
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+        }
+
+        .social-icons a {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
+            transition: background-color 0.3s;
+            width: 40px; 
+            height: 40px; 
+            line-height: 40px; 
+        }
+
+        .social-icons a:hover {
+            background-color: #575757;
+        }
+
+       
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-list li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="popup" id="popup">
+        <button class="close-btn" onclick="closePopup()">Cerrar</button>
+        <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Popup Image">
+    </div>
+
+    <div id="banner">
+        <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\banner.tiff" alt="Banner" id="banner-img">
+        <h1>Bienvenidos a nuestro Instituto</h1>
+        <p>Educación de calidad para todos</p>
+    </div>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="oferta-academica.html"><i class="fas fa-graduation-cap"></i> Oferta Académica</a></li>
+            <li><a href="historia.html"><i class="fas fa-book"></i> Historia</a></li>
+            <li><a href="info-general.html"><i class="fas fa-info-circle"></i> Información General</a></li>
+            <li><a href="promocion2024.html"><i class="fas fa-star"></i> Promoción 2024</a></li>
+            <li><a href="logros.html"><i class="fas fa-trophy"></i> Logros</a></li>
+            <li><a href="quienes-somos.html"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+            <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </nav>
+
+    <a href="promocion2024.html" class="promo-button">Promo 2024</a>
+
+   
+    
+
+    
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item active">
+                <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://i0.wp.com/ampuertocortes.hn/wp-content/uploads/2019/04/56910149_2149735531785146_6057711205303189504_n.jpg?fit=960%2C640&ssl=1" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://d26m4ikkajfmz.cloudfront.net/wp-content/uploads/2023/02/Clases-en-Puerto-Cortes-e1675354458190.jpg" alt="Imagen 3">
+            </div>
+        </div>
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+     
+    <div class="grid-container">
+        <div class="image-card">
+            <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Clases Interactivas">
+            <div class="image-title">Clases Presenciales</div>
+            <p>Disfruta de un aprendizaje dinámico y participativo en nuestras aulas.</p>
+        </div>
+        <div class="image-card">
+            <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\fotocolegio1.jpeg" alt="Eventos Culturales">
+            <div class="image-title">Nuestro Instituto</div>
+            <p>Participa en actividades que enriquecen nuestra comunidad estudiantil.</p>
+        </div>
+        <div class="image-card">
+            <img src="https://d26m4ikkajfmz.cloudfront.net/wp-content/uploads/2023/02/Clases-en-Puerto-Cortes-e1675354458190.jpg" alt="Talleres Especializados">
+            <div class="image-title">Gimnasio</div>
+            <p>Desarrolla tus habilidades en talleres impartidos por expertos.</p>
+        </div>
+    </div>
+    <style>
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; 
+        }
+    
+        .video-container {
+            width: 480px; 
+            margin-top: 20px;
+        }
+    
+        video {
+            width: 100%; 
+        }
+    </style>
+    
+    <div class="hero-section">
+        <h2>INSTITUTO FRANKLIN DELANO ROOSEVELT</h2>
+        <div class="news-ticker">
+            <span>¡INSCRIPCIONES ABIERTAS EN EL INSTITUTO FRANKLIN DELANO ROOSEVELT!</span>
+        </div>
+        <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\toma1.jpg" alt="Inscripciones abiertas" />
+        
+        <div class="video-container">
+            <video controls>
+                <source src="C:\Users\JOSE REYES\Documents\Proyecto Final\videopromocional\Video anuncion fdr.mp4" type="video/mp4">
+                
+                
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </div>
+    <div class="testimonial-container">
+        <h2>Testimonios</h2>
+        <blockquote>
+            "La mejor educación que he recibido, con profesores dedicados y un ambiente maravilloso."
+        </blockquote>
+        <p>- Juan Pérez, exalumno</p>
+    </div>
+
+    <div class="event-container">
+        <h2>Eventos Próximos</h2>
+        <div class="event">
+            <strong>Baile de la solidaridad:</strong> 12 de octubre, Se realizó el baile de la solidaridad.
+            
+        </div>
+        <div class="event">
+            <strong>Feria de Robotica:</strong> 20 de diciembre, una celebración musical para toda la familia.
+            
+        </div>
+    </div>
+    
+
+    <div class="faq-container">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <strong>¿Cuál es el horario?</strong>
+            <p>Nuestras clases inician a las 7:00 a.m. y terminan a las 12:00 p.m. de lunes a viernes.</p>
+        </div>
+        <div class="faq-item">
+            <strong>¿Cómo puedo inscribirme?</strong>
+            <p>Las inscripciones se realizan a través de nuestro sitio web o directamente en la institución.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Instituto Franklin Delano Roosevelt. Todos los derechos reservados.</p>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Contacto</a>
+    </footer>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com/inst.fdr?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/fdr_2024/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@institutogubernamentalfran9768" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveSlide(direction) {
+            const slides = document.querySelectorAll('.carousel-item');
+            slides[currentSlide].classList.remove('active');
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+
+            const carousel = document.querySelector('.carousel');
+            carousel.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+        }
+
+       
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+      
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

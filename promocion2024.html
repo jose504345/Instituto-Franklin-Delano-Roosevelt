@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoción 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            z-index: 1000; 
+        }
+        .nav-list {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .circle-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            margin: 2rem auto;
+            overflow-x: auto;
+            perspective: 1000px;
+        }
+        .circle-container li {
+            list-style: none;
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .circle-container li img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            cursor: pointer; 
+            transition: transform 0.3s;
+        }
+        .circle-container li:hover img {
+            transform: translateZ(20px) scale(1.1);
+        }
+        .name {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+            animation: fadeIn 0.4s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Promoción 2024</h1>
+    </header>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="oferta-academica.html"><i class="fas fa-graduation-cap"></i> Oferta Académica</a></li>
+            <li><a href="historia.html"><i class="fas fa-book"></i> Historia</a></li>
+            <li><a href="info-general.html"><i class="fas fa-info-circle"></i> Información General</a></li>
+            <li><a href="promocion2024.html"><i class="fas fa-star"></i> Promoción 2024</a></li>
+            <li><a href="logros.html"><i class="fas fa-trophy"></i> Logros</a></li>
+            <li><a href="quienes-somos.html"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+            <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>Lista de Estudiantes - Promoción 2024</h1>
+        <p>Felicitamos a todos los estudiantes que conforman la Promoción 2024.</p>
+
+        <div class="circle-container">
+            <ul style="display: flex;">
+                <li>
+    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\WhatsApp Image 2024-10-23 at 10.14.44 PM (1).jpeg" alt="Jonathan Reyes" onclick="showModal('El tiempo y la historia no son más que un susurro en el vasto silencio del universo.')">
+    <div class="name">Jonathan Reyes</div>
+</li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\arnoldo.jpeg" alt="Arnoldo Lopez" onclick="showModal('Cada paso que das en la vida es un ladrillo en la construcción de tus sueños. ¡Felicidades por este hito!')">
+                    <div class="name">Arnoldo Alvarenga</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\kenny.jpeg" alt="Kenny Gomez" onclick="showModal('Nunca olvides tus raíces, pues son el cimiento de tus alas. ¡Adelante hacia lo desconocido!')">
+                    <div class="name">Kenny Gomez</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\erwin.jpeg" alt="Erwin Lopez" onclick="showModal('Hoy celebramos tus logros; mañana, el mundo te espera con oportunidades. ¡Ve a conquistar tu destino!')">
+                    <div class="name">Erwin Lopez</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\jostyn.jpeg" alt="Kenny Gomez" onclick="showModal('El futuro pertenece a quienes sueñan en grande y trabajan con pasión. ¡No dejes que nada te detenga!')">
+                    <div class="name">Jostyn Chavez</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\erick.jpeg" alt="Eick Garcia" onclick="showModal('Cada final es solo el principio de una nueva historia llena de posibilidades. ¡Atrévete a escribirla!')">
+                    <div class="name">Erick Garcia</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\ashlyherrera.jpeg" alt="Carlos Perez" onclick="showModal('Hoy inicia el viaje más emocionante de tu vida. ¡Que cada día sea una nueva aventura!')">
+                    <div class="name">Ashly Herrera</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\yurit.jpeg" alt="Sofia Garcia" onclick="showModal('Sigue tus sueños con valentía, porque son las estrellas que guiarán tu camino. ¡Nunca te detengas!')">
+                    <div class="name">Yurit Mejia</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\rachelemurillo.jpeg" alt="Laura Morales" onclick="showModal('Hoy comienzas una nueva aventura; el futuro es un lienzo en blanco. ¡Pinta tu historia!')">
+                    <div class="name">Rachele Murillo</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\Lohany.jpeg" alt="Marco Ruiz" onclick="showModal('Las memorias que has creado serán la luz que te acompañe en cada paso. ¡Llévalas contigo!')">
+                    <div class="name">Lohany Ortiz</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\ashlyvarela.jpeg" alt="Isabella Torres" onclick="showModal('Cierra este capítulo con gratitud y abre el siguiente con la valentía de un soñador. ¡Adelante!')">
+                    <div class="name">Ashly Varela</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\elsafabely.jpeg" alt="Javier Martinez" onclick="showModal('Los mejores días de tu vida están aún por venir. ¡Abre los brazos a las oportunidades!')">
+                    <div class="name">Elsa Gallardo</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\meilin.jpeg" alt="Gabriela Lopez" onclick="showModal('Nunca dejes de aprender y de crecer, porque el conocimiento es el faro que ilumina tu camino. ¡Sigue explorando!')">
+                    <div class="name">Meilin Alvarado</div>
+                </li>
+                <li>
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\angie.jpeg" alt="David Sanchez" onclick="showModal('Recuerda que cada fin es una puerta abierta a nuevos comienzos. ¡Aprovecha cada oportunidad!')">
+                    <div class="name">Angie Alvarado</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Instituto Franklin Delano Roosevelt. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showModal(message) {
+            document.getElementById('modalText').innerText = message;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+        }
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-list li {
+            margin: 0 1rem;
+        }
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .nav-list li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+            background-color: white;
+            margin: 2rem 0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 30px auto;
+        }
+        .carousel {
+            position: relative;
+        }
+        .slide {
+            display: none; /* Oculta todas las imágenes por defecto */
+        }
+        .slide.active {
+            display: block; /* Muestra solo la imagen activa */
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="mailto:jonathanreyes0108@gmail.com" class="icono-flotante" target="_blank">
+        <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\gmail.png" alt="Gmail" title="Enviar un correo">
+    </a>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="oferta-academica.html"><i class="fas fa-graduation-cap"></i> Oferta Académica</a></li>
+                <li><a href="historia.html"><i class="fas fa-book"></i> Historia</a></li>
+                <li><a href="info-general.html"><i class="fas fa-info-circle"></i> Información General</a></li>
+                <li><a href="promocion2024.html"><i class="fas fa-star"></i> Promoción 2024</a></li>
+                <li><a href="logros.html"><i class="fas fa-trophy"></i> Logros</a></li>
+                <li><a href="quienes-somos.html"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Logros</h1>
+        <p>El Instituto Franklin Delano Roosevelt tiene una gran cantidad de logros en diversas áreas como deportes, robótica y ciencias.</p>
+
+        <div class="carousel-container">
+            <button class="carousel-btn prev">&lt;</button>
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\premiobandas1.jpg" alt="Imagen 1">
+                </div>
+                <div class="slide">
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\premiobandas2.jpg" alt="Imagen 2">
+                </div>
+                <div class="slide">
+                    <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\historiafdr\premiobandas3.jpg" alt="Imagen 3">
+                </div>
+            </div>
+            <button class="carousel-btn next">&gt;</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Instituto Franklin Delano Roosevelt. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showNextImage() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        function showPrevImage() {
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        document.querySelector('.next').addEventListener('click', showNextImage);
+        document.querySelector('.prev').addEventListener('click', showPrevImage);
+
+        // Inicializa la primera imagen
+        slides[index].classList.add('active');
+
+        // Cambia la imagen cada 3 segundos
+        setInterval(showNextImage, 3000);
+    </script>
+</body>
+</html>
