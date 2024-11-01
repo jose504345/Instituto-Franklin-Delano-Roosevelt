@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        nav {
+            background-color: #4CAF50;
+        }
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-list li {
+            margin: 0 1rem;
+        }
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .nav-list li a:hover {
+            background-color: #45a049;
+            border-radius: 5px;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ícono flotante de Gmail -->
+    <a href="mailto:jonathanreyes0108@gmail.com" class="icono-flotante" target="_blank">
+        <img src="C:\Users\JOSE REYES\Documents\Proyecto Final\gmail.png" alt="Gmail" title="Enviar un correo">
+    </a>
+
+    <!-- Menú de navegación -->
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="oferta-academica.html"><i class="fas fa-graduation-cap"></i> Oferta Académica</a></li>
+                <li><a href="historia.html"><i class="fas fa-book"></i> Historia</a></li>
+                <li><a href="info-general.html"><i class="fas fa-info-circle"></i> Información General</a></li>
+                <li><a href="promocion2024.html"><i class="fas fa-star"></i> Promoción 2024</a></li>
+                <li><a href="logros.html"><i class="fas fa-trophy"></i> Logros</a></li>
+                <li><a href="quienes-somos.html"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido de la página -->
+    <section>
+        <h1>Contacto</h1>
+        <p>Por favor, rellena el siguiente formulario para ponerte en contacto con nosotros:</p>
+
+        <!-- Formulario de contacto -->
+        <form action="mailto:jonathanreyes0108@gmail.com" method="post" enctype="text/plain">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
+
+
