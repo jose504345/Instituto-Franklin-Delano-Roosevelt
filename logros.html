@@ -29,10 +29,12 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Cambia a columna para móviles */
+            align-items: center; /* Centra los elementos */
+            display: none; /* Oculta el menú por defecto */
         }
         .nav-list li {
-            margin: 0 1rem;
+            margin: 0.5rem 0; /* Reduce el margen */
         }
         .nav-list li a {
             color: white;
@@ -43,6 +45,14 @@
         .nav-list li a:hover {
             background-color: #575757;
             border-radius: 5px;
+        }
+        .menu-toggle {
+            display: none; /* Ocultar el botón por defecto */
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
         }
         section {
             padding: 2rem;
@@ -67,10 +77,10 @@
             position: relative;
         }
         .slide {
-            display: none; /* Oculta todas las imágenes por defecto */
+            display: none;
         }
         .slide.active {
-            display: block; /* Muestra solo la imagen activa */
+            display: block;
         }
         .carousel-btn {
             position: absolute;
@@ -88,15 +98,26 @@
         .next {
             right: 10px;
         }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none; /* Oculta el menú por defecto en móviles */
+                flex-direction: column; /* Mantiene la disposición en columna */
+            }
+            .menu-toggle {
+                display: block; /* Muestra el botón en móviles */
+            }
+        }
     </style>
 </head>
 <body>
-   
-    </a>
 
     <header>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
         <nav class="navbar">
-            <ul class="nav-list">
+            <ul class="nav-list" id="navList">
                 <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="oferta-academica.html"><i class="fas fa-graduation-cap"></i> Oferta Académica</a></li>
                 <li><a href="historia.html"><i class="fas fa-book"></i> Historia</a></li>
@@ -152,12 +173,13 @@
 
         document.querySelector('.next').addEventListener('click', showNextImage);
         document.querySelector('.prev').addEventListener('click', showPrevImage);
-
-        // Inicializa la primera imagen
         slides[index].classList.add('active');
-
-        // Cambia la imagen cada 3 segundos
         setInterval(showNextImage, 3000);
+
+        function toggleMenu() {
+            const navList = document.getElementById('navList');
+            navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+        }
     </script>
 </body>
 </html>
