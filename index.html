@@ -26,7 +26,7 @@
 
         nav {
             display: flex;
-            flex-direction: column; /* Cambiado a columna */
+            flex-direction: column;
             background-color: #333;
             padding: 10px;
         }
@@ -34,13 +34,13 @@
         .nav-list {
             list-style: none;
             display: flex;
-            flex-direction: column; /* Cambiado a columna */
+            flex-direction: column;
             margin: 0;
             padding: 0;
         }
 
         .nav-list li {
-            margin: 5px 0; /* Ajuste de margen */
+            margin: 5px 0;
         }
 
         .nav-list a {
@@ -59,20 +59,20 @@
             overflow: hidden;
             color: white;
             text-align: center;
-            height: 200px; /* Ajustado para móviles */
+            height: 200px;
         }
 
         #banner img {
             width: 100%;
-            height: auto; /* Cambiado para mantener la proporción */
+            height: auto;
         }
 
         #banner p {
             position: absolute;
-            top: 60%; /* Ajustado para que sea más visible en móviles */
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 1.2em; /* Ajuste de tamaño de fuente */
+            font-size: 1.2em;
         }
 
         .hero-section {
@@ -83,7 +83,7 @@
 
         .carousel-container {
             position: relative;
-            max-width: 100%; /* Ajustado a 100% */
+            max-width: 100%;
             margin: 20px auto;
             overflow: hidden;
         }
@@ -100,7 +100,7 @@
 
         .carousel img {
             width: 100%;
-            height: auto; /* Mantiene la proporción de las imágenes */
+            height: auto;
         }
 
         .carousel-button {
@@ -110,7 +110,7 @@
             background-color: rgba(255, 255, 255, 0.7);
             border: none;
             cursor: pointer;
-            font-size: 20px; /* Ajustado para móviles */
+            font-size: 20px;
             padding: 10px;
         }
 
@@ -124,7 +124,7 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste automático */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
         }
@@ -140,7 +140,7 @@
 
         .image-card img {
             width: 100%;
-            height: auto; /* Mantiene la proporción */
+            height: auto;
             transition: transform 0.3s ease;
         }
 
@@ -178,35 +178,6 @@
             text-decoration: underline;
         }
 
-        .popup {
-            display: none; 
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .popup img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
         .promo-button {
             position: fixed;
             right: 20px;
@@ -230,7 +201,7 @@
             right: 20px;
             display: flex;
             flex-direction: column;
-            gap: 10px; 
+            gap: 10px;
         }
 
         .social-icons a {
@@ -240,9 +211,9 @@
             border-radius: 50%;
             text-align: center;
             transition: background-color 0.3s;
-            width: 40px; 
-            height: 40px; 
-            line-height: 40px; 
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
         }
 
         .social-icons a:hover {
@@ -251,35 +222,30 @@
 
         @media (max-width: 768px) {
             #banner {
-                height: 150px; /* Ajustado para móviles */
+                height: 150px;
             }
 
             .nav-list {
-                align-items: center; /* Centrar elementos */
+                align-items: center;
             }
 
             .carousel-button {
-                font-size: 18px; /* Ajuste de tamaño de botón */
+                font-size: 18px;
             }
         }
 
         @media (max-width: 480px) {
             #banner p {
-                font-size: 1em; /* Más pequeño para móviles */
+                font-size: 1em;
             }
 
             .image-title {
-                font-size: 0.9em; /* Más pequeño para títulos */
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
-
-    <div class="popup" id="popup">
-        <button class="close-btn" onclick="closePopup()">Cerrar</button>
-        <img src="https://i2.wp.com/losdelpuerto.net/wp-content/uploads/2021/08/fdr.jpg?ssl=1" alt="Popup Image">
-    </div>
 
     <div id="banner">
         <img src="https://i.postimg.cc/SN36LcBn/banner.jpg" alt="Banner" id="banner-img">
@@ -406,14 +372,6 @@
 
             const carousel = document.querySelector('.carousel');
             carousel.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
-        }
-
-        window.onload = function() {
-            document.getElementById('popup').style.display = 'flex';
-        }
-
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
         }
     </script>
 </body>
